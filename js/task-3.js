@@ -6,8 +6,8 @@
 
 {
   const sortByDescendingFriendCount = users => {
-    return users.sort((a, b) => b.friends.length - a.friends.length); //проста конструкція, важко додуматись..
-  };
+    return users.toSorted((a, b) => b.friends.length - a.friends.length);
+  }; //виправив, дякую за коментар. friends.length - по факту - кількість друзів.
 
   console.log(
     sortByDescendingFriendCount([
