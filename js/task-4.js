@@ -6,6 +6,12 @@
 // Функція має використовувати ланцюжок виклику методів та повертати загальний баланс користувачів (властивість balance), стать яких (властивість gender) збігається зі значенням параметра gender.
 
 {
+  getTotalBalanceByGender = (users, gender) => {
+    return users
+      .filter(user => user.gender === gender) //легко, просто фільтруємо по гендеру
+      .reduce((acc, user) => acc + user.balance, 0); //аккумулюю загальний баланс беручи його з балансу кожного юзера
+  };
+
   const clients = [
     {
       name: 'Moore Hensley',
